@@ -136,9 +136,8 @@ body {
 /* RESPONSIVE MÓVIL */
 @media (max-width: 480px) {
     .grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columnas en móvil para que las cartas no sean minúsculas */
-        gap: 6px;
-        padding: 10px;
+        grid-template-columns: repeat(4, 1fr); /* Pasa a 4 columnas */
+        gap: 10px;
     }
     
     .app-bar h1 { font-size: 1.2rem; }
