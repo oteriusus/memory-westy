@@ -66,7 +66,7 @@ body {
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* 6 columnas para desktop/tablet */
-    gap: 8px;
+    gap: 20px;
     padding: 15px;
     width: 90%; /* Ajuste para que respire a los lados */
     max-width: 450px;
