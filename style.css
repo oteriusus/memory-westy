@@ -1,75 +1,155 @@
-/* Estilos generales */
+:root {
+    --primary: #6750A4; /* Color característico de Flutter/Material 3 */
+    --on-primary: #ffffff;
+    --background: #f6f8fa;
+    --surface: #ffffff;
+    --outline: #79747e;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    color: #1c1b1f;
+}
+
+/* Contenedor tipo App */
+.app-container {
+    width: 100%;
+    max-width: 500px;
     min-height: 100vh;
-    margin: 0;
-    background-color: #ffffff;
-    /* Fondo blanco como pediste */
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
 }
 
-.game-container {
+/* Header tipo Flutter App Bar */
+.app-bar {
+    background-color: var(--surface);
+    padding: 1rem;
     text-align: center;
-    padding: 20px;
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
-/* Cuadrícula 6x6 */
+.app-bar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Tarjeta de Estadísticas */
+.stats-card {
+    background: var(--surface);
+    margin: 20px;
+    padding: 15px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label { font-size: 0.8rem; color: var(--outline); }
+.value { font-size: 1.2rem; font-weight: bold; color: var(--primary); }
+.stat-divider { width: 1px; background: #e0e0e0; margin: 0 10px; }
+
+/* Grid del juego */
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 650px;
-    margin: 20px auto;
+    gap: 8px;
+    padding: 0 20px;
 }
 
-/* Estilo de las cartas */
+/* Cartas con Efecto 3D */
 .card {
-    width: 100px;
-    height: 100px;
-    background-image: url('media/fondo-memorama.png');
-    /* IMAGEN DE REVERSO */
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
     cursor: pointer;
-    position: relative;
-    transition: transform 0.3s;
-    border: 2px solid #ddd;
-    /* Borde suave para diferenciar */
 }
 
-.card img {
+.card-inner {
+    position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 8px;
-    display: none;
-    /* Oculta la imagen frontal por defecto */
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Cuando se voltea la carta */
+.card.flipped .card-inner, .card.matched .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+/* Parte de atrás (Reverso) */
+.card-back {
+    background-color: var(--primary);
+    background-image: url('media/reverso.jpg'); /* Tu imagen de reverso */
+    background-size: cover;
+}
+
+/* Parte de adelante (Imagen) */
+.card-front {
+    background-color: var(--surface);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Estados de la carta */
-.card.flipped img,
-.card.matched img {
-    display: block;
+/* Botón Flotante (FAB) */
+.fab-container {
+    position: sticky;
+    bottom: 20px;
+    margin-top: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-.card.matched {
-    cursor: default;
-    box-shadow: 0 0 10px #27ae60;
+.fab {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(103, 80, 164, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-/* RESPONSIVE PARA MÓVIL */
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: repeat(6, 100px);
-        /* Cartas más pequeñas en móvil */
-        gap: 5px;
-    }
+.fab:active { transform: scale(0.95); }
 
-    .card {
-        width: 100px;
-        height: 100px;
-    }
+/* Responsive móvil */
+@media (max-width: 450px) {
+    .grid { grid-template-columns: repeat(4, 1fr); } /* 4 columnas en móviles pequeños */
 }
