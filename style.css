@@ -105,7 +105,7 @@ body {
 
 .card-back {
     background-color: var(--primary);
-    background-image: url('media/reverso.jpg'); 
+    background-image: url('media/fondo-memorama.png'); 
     background-size: cover;
     background-position: center;
     border: 2px solid var(--surface); /* Un borde fino la hace resaltar más */
