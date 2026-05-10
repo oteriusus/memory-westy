@@ -19,7 +19,7 @@ body {
 
 .app-container {
     width: 100%;
-    max-width: 750px; /* Tamaño máximo típico de una "app" en web */
+    max-width: 1200px; /* Tamaño máximo típico de una "app" en web */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,14 +43,9 @@ body {
 }
 
 .stats-card {
-    background: var(--surface);
-    width: 85%; /* Para que no toque los bordes del contenedor */
-    margin: 15px auto;
-    padding: 15px;
-    border-radius: 16px;
-    display: flex;
-    justify-content: space-around;
-    box-shadow: 0 4px 12px var(--shadow);
+    width: 100%;
+    max-width: 600px; /* Mantiene el marcador legible y centrado */
+    margin: 20px auto;
 }
 
 .stat-item {
@@ -65,11 +60,11 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columnas para desktop/tablet */
-    gap: 8px;
-    padding: 15px;
-    width: 90%; /* Ajuste para que respire a los lados */
-    max-width: 750px;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px; /* Aumentamos el espacio entre cartas para que luzca mejor en grande */
+    padding: 20px;
+    width: 95%; /* Ocupa casi todo el ancho disponible */
+    max-width: 1200px; /* <--- Esto permitirá que el tablero crezca mucho más */
     margin: 0 auto;
 }
 
