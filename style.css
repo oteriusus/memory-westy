@@ -7,31 +7,53 @@
     --shadow: rgba(0, 0, 0, 0.1);
 }
 
+/* 1. Centrar el contenedor de la App en la pantalla */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background);
-    margin: 0;
     display: flex;
-    justify-content: center;
-    color: #1c1b1f;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente si quieres que la app flote */
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
 }
 
-/* Contenedor tipo App */
+/* 2. Asegurar que el contenido interno esté centrado */
 .app-container {
     width: 100%;
     max-width: 500px;
-    min-height: 100vh;
-    background: var(--background);
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centra todos los hijos (header, stats, board) */
+    text-align: center;  /* Centra los textos */
 }
 
-/* Header tipo Flutter App Bar */
+/* 3. Ajustar el Header */
 .app-bar {
-    background-color: var(--surface);
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 4px var(--shadow);
+    width: 100%; /* Que ocupe todo el ancho del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* 4. Ajustar la cuadrícula (Grid) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    padding: 20px;
+    justify-content: center; /* Centra las columnas dentro del grid */
+    justify-items: center;   /* Centra cada carta dentro de su celda */
+    width: fit-content;      /* Hace que el grid no se estire innecesariamente */
+    margin: 0 auto;          /* Margen automático a los lados */
+}
+
+/* 5. Ajustar el botón inferior */
+.fab-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
 }
 
 .app-bar h1 {
@@ -61,14 +83,6 @@ body {
 .label { font-size: 0.8rem; color: var(--outline); }
 .value { font-size: 1.2rem; font-weight: bold; color: var(--primary); }
 .stat-divider { width: 1px; background: #e0e0e0; margin: 0 10px; }
-
-/* Grid del juego */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-    padding: 0 20px;
-}
 
 /* Cartas con Efecto 3D */
 .card {
@@ -124,16 +138,6 @@ body {
     object-fit: cover;
 }
 
-/* Botón Flotante (FAB) */
-.fab-container {
-    position: sticky;
-    bottom: 20px;
-    margin-top: auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-
 .fab {
     background-color: var(--primary);
     color: white;
@@ -151,5 +155,8 @@ body {
 
 /* Responsive móvil */
 @media (max-width: 450px) {
-    .grid { grid-template-columns: repeat(4, 1fr); } /* 4 columnas en móviles pequeños */
+    .grid {
+        grid-template-columns: repeat(4, 1fr); /* Pasa a 4 columnas */
+        gap: 10px;
+    }
 }
