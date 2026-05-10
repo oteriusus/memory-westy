@@ -39,25 +39,28 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random());
 
 function createBoard() {
-    board.innerHTML = ''; // Limpiar tablero
-    cardsWon = [];
-    score = 0;
-    scoreDisplay.textContent = score;
-
-    console.log("Cargando tablero...");
-
+    board.innerHTML = '';
     cardArray.forEach((item, index) => {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
         card.setAttribute('data-id', index);
         card.addEventListener('click', flipCard);
-
+        
+        const inner = document.createElement('div');
+        inner.setAttribute('class', 'card-inner');
+        
+        const front = document.createElement('div');
+        front.setAttribute('class', 'card-front');
         const img = document.createElement('img');
         img.src = item.img;
-        img.onerror = () => console.error("No se pudo cargar la imagen:", item.img);
-        img.setAttribute('src', item.img);
-
-        card.appendChild(img);
+        front.appendChild(img);
+        
+        const back = document.createElement('div');
+        back.setAttribute('class', 'card-back');
+        
+        inner.appendChild(front);
+        inner.appendChild(back);
+        card.appendChild(inner);
         board.appendChild(card);
     });
 }
