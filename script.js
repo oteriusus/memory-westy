@@ -11,7 +11,28 @@ let score = 0;
 const cardArray = [
     { name: '1', img: 'media/image01.jpg' }, { name: '1', img: 'media/image01.jpg' },
     { name: '2', img: 'media/image02.jpg' }, { name: '2', img: 'media/image02.jpg' },
-    // ... así hasta completar 18 parejas
+    { name: '3', img: 'media/image03.jpg' }, { name: '3', img: 'media/image03.jpg' },
+    { name: '4', img: 'media/image04.jpg' }, { name: '4', img: 'media/image04.jpg' },
+    { name: '5', img: 'media/image05.jpg' }, { name: '5', img: 'media/image05.jpg' },
+    { name: '6', img: 'media/image06.jpg' }, { name: '6', img: 'media/image06.jpg' },
+    { name: '7', img: 'media/image07.jpg' }, { name: '7', img: 'media/image07.jpg' },
+    { name: '8', img: 'media/image08.jpg' }, { name: '8', img: 'media/image08.jpg' },
+    { name: '9', img: 'media/image09.jpg' }, { name: '9', img: 'media/image09.jpg' },
+    { name: '10', img: 'media/image10.jpg' }, { name: '10', img: 'media/image10.jpg' },
+    { name: '11', img: 'media/image11.jpg' }, { name: '11', img: 'media/image11.jpg' },
+    { name: '12', img: 'media/image12.jpg' }, { name: '12', img: 'media/image12.jpg' },
+    { name: '13', img: 'media/image13.jpg' }, { name: '13', img: 'media/image13.jpg' },
+    { name: '14', img: 'media/image14.jpg' }, { name: '14', img: 'media/image14.jpg' },
+    { name: '15', img: 'media/image15.jpg' }, { name: '15', img: 'media/image15.jpg' },
+    { name: '16', img: 'media/image16.jpg' }, { name: '16', img: 'media/image16.jpg' },
+    { name: '17', img: 'media/image17.jpg' }, { name: '17', img: 'media/image17.jpg' },
+    { name: '18', img: 'media/image18.jpg' }, { name: '18', img: 'media/image18.jpg' },
+    { name: '19', img: 'media/image19.jpg' }, { name: '19', img: 'media/image19.jpg' },
+    { name: '20', img: 'media/image20.jpg' }, { name: '20', img: 'media/image20.jpg' },
+    { name: '21', img: 'media/image21.jpg' }, { name: '21', img: 'media/image21.jpg' },
+    { name: '22', img: 'media/image22.jpg' }, { name: '22', img: 'media/image22.jpg' },
+    { name: '23', img: 'media/image23.jpg' }, { name: '23', img: 'media/image23.jpg' },
+    { name: '24', img: 'media/image24.jpg' }, { name: '24', img: 'media/image24.jpg' },
 ];
 
 // Función para barajar
@@ -79,7 +100,7 @@ function checkForMatch() {
     cardsId = [];
 
     if (cardsWon.length === cardArray.length / 2) {
-        alert('¡Felicidades! Has encontrado todas las parejas.');
+        alert('¡Muy bien! Has encontrado todas las parejas, has ganado una moneda Westy');
     }
 }
 

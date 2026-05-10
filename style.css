@@ -36,6 +36,8 @@ body {
     cursor: pointer;
     position: relative;
     transition: transform 0.3s;
+    border: 2px solid #ddd;
+    /* Borde suave para diferenciar */
 }
 
 .card img {
@@ -61,13 +63,13 @@ body {
 /* RESPONSIVE PARA MÓVIL */
 @media (max-width: 600px) {
     .grid {
-        grid-template-columns: repeat(6, 50px);
+        grid-template-columns: repeat(6, 100px);
         /* Cartas más pequeñas en móvil */
         gap: 5px;
     }
 
     .card {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
     }
 }
