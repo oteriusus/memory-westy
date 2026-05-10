@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Mejor empezar desde arriba por si hay scroll en móviles */
-    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+    min-height: 100vh;
     margin: 0;
     background-color: var(--background);
     font-family: 'Roboto', sans-serif;
