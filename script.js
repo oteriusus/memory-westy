@@ -107,5 +107,7 @@ function checkForMatch() {
     }
 }
 
-// El juego solo empieza al pulsar el botón
-startButton.addEventListener('click', createBoard);
+// Ponemos esto para que inicie solo:
+window.onload = () => {
+    createBoard();
+};
