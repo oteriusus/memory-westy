@@ -60,13 +60,13 @@ body {
 .label { font-size: 0.75rem; color: #79747e; }
 .value { font-size: 1.3rem; font-weight: bold; color: var(--primary); }
 
-/* 4. EL GRID (Ajustado a 100px fijos) */
+/* 4. EL GRID (Ajustado a 80px fijos) */
 .grid {
     display: grid;
-    /* Aquí definimos 6 columnas de 100px exactos cada una */
-    grid-template-columns: repeat(6, 100px); 
-    /* Aquí definimos las filas de 100px exactos */
-    grid-auto-rows: 100px; 
+    /* Aquí definimos 6 columnas de 80px exactos cada una */
+    grid-template-columns: repeat(6, 80px); 
+    /* Aquí definimos las filas de 80px exactos */
+    grid-auto-rows: 80px; 
     gap: 12px; 
     padding: 20px;
     justify-content: center; /* Centra el bloque de cartas en la pantalla */
@@ -75,8 +75,8 @@ body {
 
 /* 5. Estilo de las Cartas */
 .card {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -107,7 +107,7 @@ body {
 /* Parte trasera (Reverso) */
 .card-back {
     background-color: var(--primary);
-    background-image: url('media/reverso.jpg'); 
+    background-image: url('media/fondo-memorama.png'); 
     background-size: cover;
     background-position: center;
     border: 2px solid white;
@@ -132,15 +132,15 @@ body {
 /* 6. RESPONSIVE MÓVIL */
 @media (max-width: 650px) {
     .grid {
-        /* En móviles, si no caben 6, pasamos a 3 columnas para que sigan midiendo 100px */
-        grid-template-columns: repeat(3, 100px); 
-        gap: 10px;
+        /* En móviles, si no caben 6, pasamos a 4 columnas para que sigan midiendo 100px */
+        grid-template-columns: repeat(4, 80px); 
+        gap: 8px;
     }
 }
 
 @media (max-width: 350px) {
     .grid {
         /* En móviles ultra pequeños, 2 columnas */
-        grid-template-columns: repeat(2, 100px);
+        grid-template-columns: repeat(3, 80px);
     }
 }
