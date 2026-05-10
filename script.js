@@ -1,13 +1,12 @@
 const board = document.getElementById('game-board');
 const scoreDisplay = document.getElementById('score');
-const startButton = document.getElementById('start-button');
 
 let chosenCards = [];
 let cardsId = [];
 let cardsWon = [];
 let score = 0;
 
-// Aquí debes poner tus 18 parejas (36 imágenes en total)
+// Para un grid de 6x6 necesitamos exactamente 18 parejas (36 cartas)
 const cardArray = [
     { name: '1', img: 'media/image01.jpg' }, { name: '1', img: 'media/image01.jpg' },
     { name: '2', img: 'media/image02.jpg' }, { name: '2', img: 'media/image02.jpg' },
@@ -26,16 +25,10 @@ const cardArray = [
     { name: '15', img: 'media/image15.jpg' }, { name: '15', img: 'media/image15.jpg' },
     { name: '16', img: 'media/image16.jpg' }, { name: '16', img: 'media/image16.jpg' },
     { name: '17', img: 'media/image17.jpg' }, { name: '17', img: 'media/image17.jpg' },
-    { name: '18', img: 'media/image18.jpg' }, { name: '18', img: 'media/image18.jpg' },
-    { name: '19', img: 'media/image19.jpg' }, { name: '19', img: 'media/image19.jpg' },
-    { name: '20', img: 'media/image20.jpg' }, { name: '20', img: 'media/image20.jpg' },
-    { name: '21', img: 'media/image21.jpg' }, { name: '21', img: 'media/image21.jpg' },
-    { name: '22', img: 'media/image22.jpg' }, { name: '22', img: 'media/image22.jpg' },
-    { name: '23', img: 'media/image23.jpg' }, { name: '23', img: 'media/image23.jpg' },
-    { name: '24', img: 'media/image24.jpg' }, { name: '24', img: 'media/image24.jpg' },
+    { name: '18', img: 'media/image18.jpg' }, { name: '18', img: 'media/image18.jpg' }
 ];
 
-// Función para barajar
+// Barajar las cartas cada vez que se carga
 cardArray.sort(() => 0.5 - Math.random());
 
 function createBoard() {
@@ -68,14 +61,12 @@ function createBoard() {
 function flipCard() {
     let cardId = this.getAttribute('data-id');
 
-    // Solo permite voltear si no es la misma y no hay ya 2 volteadas
     if (!cardsId.includes(cardId) && chosenCards.length < 2 && !this.classList.contains('matched')) {
         chosenCards.push(cardArray[cardId].name);
         cardsId.push(cardId);
         this.classList.add('flipped');
 
         if (chosenCards.length === 2) {
-            // Temporizador de 500ms antes de comprobar
             setTimeout(checkForMatch, 500);
         }
     }
@@ -87,14 +78,12 @@ function checkForMatch() {
     const optionTwoId = cardsId[1];
 
     if (chosenCards[0] === chosenCards[1]) {
-        // Coinciden: se mantienen en la posición
         cards[optionOneId].classList.replace('flipped', 'matched');
         cards[optionTwoId].classList.replace('flipped', 'matched');
         cardsWon.push(chosenCards);
         score++;
         scoreDisplay.textContent = score;
     } else {
-        // No coinciden: se ocultan
         cards[optionOneId].classList.remove('flipped');
         cards[optionTwoId].classList.remove('flipped');
     }
@@ -102,12 +91,12 @@ function checkForMatch() {
     chosenCards = [];
     cardsId = [];
 
+    // Verificamos si ha ganado comparando con la mitad del array actual (18)
     if (cardsWon.length === cardArray.length / 2) {
         alert('¡Muy bien! Has encontrado todas las parejas, has ganado una moneda Westy');
     }
 }
 
-// Ponemos esto para que inicie solo:
 window.onload = () => {
     createBoard();
 };
