@@ -64,7 +64,7 @@ body {
 .grid {
     display: grid;
     /* Aquí definimos 6 columnas de 80px exactos cada una */
-    grid-template-columns: repeat(6, 80px); 
+    grid-template-columns: repeat(3, 80px); 
     /* Aquí definimos las filas de 80px exactos */
     grid-auto-rows: 80px; 
     gap: 12px; 
