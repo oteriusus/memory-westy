@@ -66,7 +66,7 @@ body {
     /* Aquí definimos 6 columnas de 80px exactos cada una */
     grid-template-columns: repeat(3, 120px); 
     /* Aquí definimos las filas de 80px exactos */
-    grid-auto-rows: 80px; 
+    grid-auto-rows: 120px; 
     gap: 12px; 
     padding: 20px;
     justify-content: center; /* Centra el bloque de cartas en la pantalla */
@@ -75,8 +75,8 @@ body {
 
 /* 5. Estilo de las Cartas */
 .card {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -133,7 +133,7 @@ body {
 @media (max-width: 650px) {
     .grid {
         /* En móviles, si no caben 6, pasamos a 4 columnas para que sigan midiendo 100px */
-        grid-template-columns: repeat(4, 80px); 
+        grid-template-columns: repeat(3, 120px); 
         gap: 8px;
     }
 }
@@ -141,6 +141,6 @@ body {
 @media (max-width: 350px) {
     .grid {
         /* En móviles ultra pequeños, 2 columnas */
-        grid-template-columns: repeat(3, 80px);
+        grid-template-columns: repeat(3, 120px);
     }
 }
