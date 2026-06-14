@@ -17,15 +17,15 @@ const cardArray = [
     { name: '7', img: 'media/image07.jpg' }, { name: '7', img: 'media/image07.jpg' },
     { name: '8', img: 'media/image08.jpg' }, { name: '8', img: 'media/image08.jpg' },
     //{ name: '9', img: 'media/image09.jpg' }, { name: '9', img: 'media/image09.jpg' },
-    //{ name: '10', img: 'media/image10.jpg' }, { name: '10', img: 'media/image10.jpg' },
-    { name: '11', img: 'media/image11.jpg' }, { name: '11', img: 'media/image11.jpg' },
+    { name: '10', img: 'media/image10.jpg' }, { name: '10', img: 'media/image10.jpg' },
+    //{ name: '11', img: 'media/image11.jpg' }, { name: '11', img: 'media/image11.jpg' },
     { name: '12', img: 'media/image12.jpg' }, { name: '12', img: 'media/image12.jpg' },
     { name: '13', img: 'media/image13.jpg' }, { name: '13', img: 'media/image13.jpg' },
     //{ name: '14', img: 'media/image14.jpg' }, { name: '14', img: 'media/image14.jpg' },
     { name: '15', img: 'media/image15.jpg' }, { name: '15', img: 'media/image15.jpg' },
     //{ name: '16', img: 'media/image16.jpg' }, { name: '16', img: 'media/image16.jpg' },
     { name: '17', img: 'media/image17.jpg' }, { name: '17', img: 'media/image17.jpg' },
-    //{ name: '18', img: 'media/image18.jpg' }, { name: '18', img: 'media/image18.jpg' },
+    { name: '18', img: 'media/image18.jpg' }, { name: '18', img: 'media/image18.jpg' },
     { name: '19', img: 'media/image19.jpg' }, { name: '19', img: 'media/image19.jpg' },
     { name: '21', img: 'media/image21.jpg' }, { name: '21', img: 'media/image21.jpg' },
     { name: '22', img: 'media/image22.jpg' }, { name: '22', img: 'media/image22.jpg' }
@@ -96,7 +96,7 @@ function checkForMatch() {
 
     // Verificamos si ha ganado comparando con la mitad del array actual (18)
     if (cardsWon.length === cardArray.length / 2) {
-        alert('¡Muy bien! Has encontrado todas las parejas, has ganado una moneda Westy');
+        alert('¡Muy bien! Has encontrado todas las parejas, MUESTRA ESTA PANTALLA PARA VALIDAR LA PRUEBA');
     }
 }
 
