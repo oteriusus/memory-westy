@@ -23,7 +23,7 @@ const cardArray = [
     { name: '13', img: 'media/image13.jpg' }, { name: '13', img: 'media/image13.jpg' },
     //{ name: '14', img: 'media/image14.jpg' }, { name: '14', img: 'media/image14.jpg' },
     { name: '15', img: 'media/image15.jpg' }, { name: '15', img: 'media/image15.jpg' },
-    //{ name: '16', img: 'media/image16.jpg' }, { name: '16', img: 'media/image16.jpg' },
+    { name: '16', img: 'media/image16.jpg' }, { name: '16', img: 'media/image16.jpg' },
     { name: '17', img: 'media/image17.jpg' }, { name: '17', img: 'media/image17.jpg' },
     { name: '18', img: 'media/image18.jpg' }, { name: '18', img: 'media/image18.jpg' },
     { name: '19', img: 'media/image19.jpg' }, { name: '19', img: 'media/image19.jpg' },
